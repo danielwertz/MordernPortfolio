@@ -21,6 +21,7 @@ h2,
 h3 {
   margin: 0;
   font-weight: 400;
+  
 
   &.lg-heading {
     font-size: 6rem;
@@ -86,7 +87,7 @@ main {
   }
   .bio {
     grid-area: bio;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .job-1 {
     grid-area: job1;
@@ -121,12 +122,18 @@ main {
   }
 }
 // contact page
+.notice{
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px $secondary-color solid;
+}
 .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3);
     align-items: center;
     margin-top: 1rem;
+    text-align: center;
 
     div{
         font-size: 2rem;
@@ -170,11 +177,30 @@ main {
 }
 
 #main-footer {
+
   text-align: center;
   padding: 1rem;
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
   height: 60px;
+
+  .footer{
+    display: grid;
+    grid-template-areas: 
+    'copyright icons';
+    grid-template-columns: repeat(1);
+
+    .icons{
+        a {
+            &:hover {
+                opacity: 0.5;
+                color: $secondary-color;
+                @include easeOut;
+              }
+        }
+
+    }
+  }
 }
 
 @import "mobile";
